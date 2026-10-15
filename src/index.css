@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-script: 'Caveat', cursive;
+  --font-hindi: 'Rozha One', serif;
+
+  --color-brand-navy: #071426;
+  --color-brand-navy-dark: #040b15;
+  --color-brand-navy-surface: #0a192f;
+  --color-brand-gold: #d4a359;
+  --color-brand-gold-light: #e8c283;
+  --color-brand-gold-dark: #b87834;
+  --color-cream-50: #fdfbf7;
+  --color-cream-100: #f9f8f6;
+  --color-cream-200: #f1ede4;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+.font-hindi {
+  font-family: 'Rozha One', serif;
+}
+
+/* Reduced white fade - keeps property photograph clearly visible while ensuring text contrast */
+.hero-clear-overlay {
+  background: linear-gradient(90deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.42) 36%, rgba(255,255,255,0.05) 72%, rgba(255,255,255,0) 100%);
+}
+
+@media (max-width: 1024px) {
+  .hero-clear-overlay {
+    background: linear-gradient(180deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.22) 42%, rgba(255,255,255,0.02) 80%, rgba(255,255,255,0) 100%);
+  }
+}
+
+/* Hide scrollbars while preserving functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

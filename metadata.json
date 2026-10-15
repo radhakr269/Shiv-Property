@@ -1,0 +1,6 @@
+{
+  "name": "Property Darshan",
+  "description": "Discover premium homes, luxury villas, residential plots and commercial real estate in Lucknow with Property Darshan. Personalized property tours and verified local guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
