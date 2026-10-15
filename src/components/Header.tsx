@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-              Live OTP login and document management are currently enabled for registered clients in private beta. For instant property tours, verified site inspections, or custom proposals in Rudrapur and surrounding Uttarakhand regions, connect directly with our advisory desk:
+              Live OTP login and document management are currently enabled for registered clients in private beta. For instant property tours, guided site inspections, or custom proposals in Rudrapur and surrounding Uttarakhand regions, connect directly with our advisory desk:
             </p>
 
             <div className="space-y-2.5">

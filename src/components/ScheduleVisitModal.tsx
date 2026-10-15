@@ -175,7 +175,7 @@ export const ScheduleVisitModal: React.FC<ScheduleVisitModalProps> = ({ property
               </button>
 
               <p className="text-[11px] text-center text-slate-400">
-                100% verified site visit accompanied by a senior advisor. No obligations.
+                Accompanied site tour with our property advisor. No obligations.
               </p>
             </form>
           </>

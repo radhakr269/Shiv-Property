@@ -22,7 +22,8 @@ export const CONTACT_CONFIG = {
   city: 'Rudrapur',
   state: 'Uttarakhand',
   district: 'Udham Singh Nagar',
-  timing: 'Mon - Sun: 9:00 AM - 8:00 PM',
+  timing: 'Available on Call / WhatsApp (Hours pending client confirmation)',
+  displayTiming: 'Available on Call / WhatsApp',
 
   // Confirmed social media from profile
   instagramUrl: 'https://www.instagram.com/shiv_property_uttarakhand/',
@@ -33,7 +34,8 @@ export const CONTACT_CONFIG = {
   isPhoneConfirmed: true,
   isWhatsAppConfirmed: true,
   isEmailConfirmed: false,
-  isAddressConfirmed: true,
+  isAddressConfirmed: false, // General region confirmed (Rudrapur, Udham Singh Nagar); exact office address pending client confirmation
+  isTimingConfirmed: false, // Operating hours unverified; pending client confirmation
   isSocialInstagramConfirmed: true,
   isSocialYoutubeLinked: true,
 

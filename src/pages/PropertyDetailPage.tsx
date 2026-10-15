@@ -312,8 +312,8 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                 <span>Portfolio Showcase</span>
               </div>
               <div className="text-xs sm:text-[13px] text-slate-600 leading-relaxed border-t md:border-t-0 md:border-l border-amber-200/60 pt-2 md:pt-0 md:pl-4">
-                Sample portfolio showcase for Lucknow. Pricing, floor dimensions, and specifications are indicative.
-                Contact our verified property advisors for active inventory, on-site walkthroughs, and official RERA verification.
+                Showcase concepts for Rudrapur &amp; Udham Singh Nagar corridor. Pricing, floor dimensions, and specifications are indicative.
+                Contact our property advisors for active inventory, on-site walkthroughs, and local title guidance.
               </div>
             </div>
 
@@ -347,7 +347,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                       {property.longOverview}
                     </p>
                     <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                      Situated close to major arterial connections such as Shaheed Path and Amar Shaheed Path, with immediate access to reputed international schools, Phoenix Palassio mall, healthcare institutions, and corporate tech parks.
+                      Positioned with convenient access to key highway corridors, connecting Rudrapur, Dineshpur, Pantnagar, and Kichha across Udham Singh Nagar.
                     </p>
                   </div>
 
@@ -360,11 +360,11 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                       </div>
                       <div className="flex justify-between py-2">
                         <dt className="text-slate-500 font-medium">RERA Registered</dt>
-                        <dd className="text-slate-900 font-semibold">{property.reraRegistered || 'Inquire for Verified Details'}</dd>
+                        <dd className="text-slate-900 font-semibold">{property.reraRegistered || 'Inquire for Title Details'}</dd>
                       </div>
                       <div className="flex justify-between py-2">
                         <dt className="text-slate-500 font-medium">Possession Status</dt>
-                        <dd className="text-slate-900 font-semibold">{property.possession || 'Ready to Move'}</dd>
+                        <dd className="text-slate-900 font-semibold">{property.possession || 'Inquire for Timelines'}</dd>
                       </div>
                       <div className="flex justify-between py-2">
                         <dt className="text-slate-500 font-medium">Furnishing</dt>
@@ -384,7 +384,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                       </div>
                       <div className="flex justify-between py-2">
                         <dt className="text-slate-500 font-medium">Age of Property</dt>
-                        <dd className="text-slate-900 font-semibold">{property.ageOfProperty || 'New Construction'}</dd>
+                        <dd className="text-slate-900 font-semibold">{property.ageOfProperty || 'Inquire for Details'}</dd>
                       </div>
                     </dl>
                   </div>
@@ -447,19 +447,19 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
             {/* Tab: Location */}
             {activeTab === 'Location' && (
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 shadow-sm space-y-4">
-                <h2 className="text-xl font-bold text-slate-900">Neighbourhood & Connectivity</h2>
+                <h2 className="text-xl font-bold text-slate-900">Neighbourhood &amp; Connectivity</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
                   <div className="p-4 rounded-xl bg-slate-50 space-y-2">
-                    <h4 className="font-bold text-slate-900">Shopping & Entertainment</h4>
-                    <p className="text-slate-600">Phoenix Palassio Mall - 5 mins</p>
-                    <p className="text-slate-600">Lulu Mall Lucknow - 10 mins</p>
-                    <p className="text-slate-600">Riverside Club & Eateries - 8 mins</p>
+                    <h4 className="font-bold text-slate-900">Commercial &amp; Transit Hubs</h4>
+                    <p className="text-slate-600">Metropolis City Mall - 8 mins</p>
+                    <p className="text-slate-600">Rudrapur Railway Station - 10 mins</p>
+                    <p className="text-slate-600">Kichha Road Industrial Corridor - 6 mins</p>
                   </div>
                   <div className="p-4 rounded-xl bg-slate-50 space-y-2">
-                    <h4 className="font-bold text-slate-900">Healthcare & Education</h4>
-                    <p className="text-slate-600">Medanta Super Specialty Hospital - 7 mins</p>
-                    <p className="text-slate-600">City Montessori School (CMS) - 4 mins</p>
-                    <p className="text-slate-600">Amity University Campus - 12 mins</p>
+                    <h4 className="font-bold text-slate-900">Healthcare &amp; Education</h4>
+                    <p className="text-slate-600">District Hospital &amp; Medical Centers - 8 mins</p>
+                    <p className="text-slate-600">Pantnagar Airport Corridor - 15 mins</p>
+                    <p className="text-slate-600">Reputed Schools &amp; Colleges - 5 mins</p>
                   </div>
                 </div>
               </div>
@@ -475,12 +475,12 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                     <span className="font-bold text-slate-900">{property.price}</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-slate-100">
-                    <span className="text-slate-600">Estimated Registration & Stamp Duty</span>
-                    <span className="font-bold text-slate-900">7% (Approx. ₹ 19.9 Lakhs)</span>
+                    <span className="text-slate-600">Estimated Registration &amp; Stamp Duty</span>
+                    <span className="font-bold text-slate-900">Subject to Uttarakhand Revenue circle rates</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-slate-100">
-                    <span className="text-slate-600">Maintenance Advance (1 Year)</span>
-                    <span className="font-bold text-slate-900">Included</span>
+                    <span className="text-slate-600">Maintenance Advance</span>
+                    <span className="font-bold text-slate-900">As applicable</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-slate-100">
                     <span className="text-slate-600">Brokerage / Hidden Fees</span>
@@ -502,18 +502,18 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-100 shadow-sm space-y-4">
                 <h2 className="text-xl font-bold text-slate-900">Direct Advisor Desk</h2>
                 <p className="text-xs text-slate-600">
-                  Call or WhatsApp our dedicated Lucknow property advisors for immediate pricing discussions, site visits, or tailored queries:
+                  Call or WhatsApp our dedicated Rudrapur property advisors for immediate pricing discussions, site visits, or tailored queries:
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a
-                    href="tel:+919721013815"
+                    href={CONTACT_CONFIG.getTelLink()}
                     className="px-5 py-2.5 bg-[#b87834] text-white text-xs font-semibold rounded-full flex items-center gap-2"
                   >
                     <Phone className="w-4 h-4" />
-                    <span>Call +91 9721013815</span>
+                    <span>Call {CONTACT_CONFIG.displayPhones}</span>
                   </a>
                   <a
-                    href="https://wa.me/919721013815"
+                    href={CONTACT_CONFIG.getWhatsAppLink(property.title, property.location)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-2.5 bg-[#00a859] text-white text-xs font-semibold rounded-full flex items-center gap-2"
@@ -602,7 +602,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-semibold text-slate-700 leading-tight">
-                    Verified Site Tours
+                    Guided Site Tours
                   </span>
                 </div>
 
@@ -620,7 +620,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                     <Compass className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-semibold text-slate-700 leading-tight">
-                    Best Deals & Transparent Pricing
+                    Best Deals &amp; Transparent Pricing
                   </span>
                 </div>
               </div>
@@ -632,7 +632,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                 <h3 className="text-lg font-bold text-slate-900">Location</h3>
                 <a
                   className="text-xs font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1 transition"
-                  href="https://maps.google.com/?q=Gomti+Nagar+Lucknow"
+                  href="https://maps.google.com/?q=Rudrapur+Udham+Singh+Nagar+Uttarakhand"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -645,7 +645,7 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
               <div className="relative w-full h-52 rounded-xl overflow-hidden border border-slate-200 bg-[#e5e3df]">
                 <svg className="w-full h-full object-cover" fill="none" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
                   <rect fill="#f0ede5" height="250" width="400"></rect>
-                  {/* Gomti River */}
+                  {/* Kalyani River Corridor */}
                   <path d="M-10 160 C 80 140, 120 180, 220 155 C 270 140, 310 180, 410 160" fill="none" stroke="#bfd9f2" strokeLinecap="round" strokeWidth="22"></path>
                   <path d="M-10 160 C 80 140, 120 180, 220 155 C 270 140, 310 180, 410 160" fill="none" stroke="#9bc6ea" strokeLinecap="round" strokeWidth="12"></path>
                   {/* Roads */}
@@ -653,20 +653,20 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
                   <path d="M30 -10 L140 260" stroke="#f6c280" strokeWidth="4"></path>
                   <path d="M410 30 L-10 190" stroke="#ffffff" strokeWidth="14"></path>
                   <path d="M410 30 L-10 190" stroke="#e0ded6" strokeWidth="8"></path>
-                  {/* Shaheed Path Arterial */}
+                  {/* Nainital Highway Arterial */}
                   <path d="M220 -20 Q350 100, 380 260" stroke="#ffffff" strokeWidth="12"></path>
                   <path d="M220 -20 Q350 100, 380 260" stroke="#ffd180" strokeWidth="6"></path>
                   <path d="M70 70 L350 70" stroke="#ffffff" strokeWidth="6"></path>
                   <path d="M70 70 L350 70" stroke="#d5d3ca" strokeWidth="3"></path>
                   {/* Landmark Labels */}
-                  <text fill="#71717a" fontSize="9" fontWeight="600" x="290" y="65">Shaheed Path</text>
-                  <text fill="#71717a" fontSize="9" fontWeight="600" x="280" y="195">Shaheed Path</text>
+                  <text fill="#71717a" fontSize="9" fontWeight="600" x="270" y="65">Nainital Highway</text>
+                  <text fill="#71717a" fontSize="9" fontWeight="600" x="260" y="195">Dineshpur Road</text>
                   <circle cx="250" cy="85" fill="#e11d48" r="4"></circle>
-                  <text fill="#475569" fontSize="9" fontWeight="600" x="258" y="88">Gomti Nagar</text>
+                  <text fill="#475569" fontSize="9" fontWeight="600" x="258" y="88">Rudrapur City</text>
                   <circle cx="340" cy="115" fill="#0284c7" r="4"></circle>
-                  <text fill="#475569" fontSize="8.5" fontWeight="600" x="348" y="118">Phoenix Palassio Mall</text>
+                  <text fill="#475569" fontSize="8.5" fontWeight="600" x="330" y="118">Metropolis Mall</text>
                   <circle cx="280" cy="170" fill="#059669" r="4"></circle>
-                  <text fill="#475569" fontSize="8.5" fontWeight="600" x="230" y="174">Gomti Riverfront</text>
+                  <text fill="#475569" fontSize="8.5" fontWeight="600" x="230" y="174">Kichha Corridor</text>
                   {/* Central Red Pin */}
                   <g transform="translate(275, 95)">
                     <ellipse cx="12" cy="28" fill="rgba(0,0,0,0.2)" rx="7" ry="3"></ellipse>
@@ -771,11 +771,11 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-center sm:text-left">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight">Find Your Dream Property</h2>
-              <p className="text-[#d4a359] font-medium text-base">with Property Darshan</p>
+              <p className="text-[#d4a359] font-medium text-base">with Shiv Property Uttarakhand</p>
             </div>
             <div className="hidden sm:block h-10 w-[1px] bg-slate-700"></div>
             <p className="text-xs text-slate-300 max-w-sm">
-              Get expert advice, personalized property tours and the best deals in Lucknow.
+              Get local guidance, personalized property tours and the best opportunities in Rudrapur.
             </p>
           </div>
           <div>
@@ -793,14 +793,14 @@ export const PropertyDetailPage: React.FC<PropertyDetailPageProps> = ({
       {/* ================= MOBILE STICKY BOTTOM ACTION BAR (Matching Mobile 4.png) ================= */}
       <div className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-slate-200 px-4 py-3 z-40 shadow-2xl flex items-center gap-3">
         <a
-          href="tel:+919721013815"
+          href={CONTACT_CONFIG.getTelLink()}
           className="flex-1 flex items-center justify-center bg-[#071426] text-white py-3 px-3 rounded-xl font-semibold text-sm shadow-xs"
         >
           <Phone className="w-4 h-4 mr-2" />
           <span>Call Now</span>
         </a>
         <a
-          href="https://wa.me/919721013815"
+          href={CONTACT_CONFIG.getWhatsAppLink(property.title, property.location)}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 flex items-center justify-center bg-[#00874c] hover:bg-[#007441] text-white py-3 px-3 rounded-xl font-semibold text-sm shadow-xs"

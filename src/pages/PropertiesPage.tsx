@@ -35,7 +35,7 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
   const [activeCategory, setActiveCategory] = useState<string>(
     initialFilters?.type && initialFilters.type !== 'Any' ? initialFilters.type : 'All'
   );
-  const [filterLocation, setFilterLocation] = useState(initialFilters?.location || 'Lucknow');
+  const [filterLocation, setFilterLocation] = useState(initialFilters?.location || 'Rudrapur');
   const [filterType, setFilterType] = useState(initialFilters?.type || 'Any');
   const [filterBudget, setFilterBudget] = useState(initialFilters?.budget || 'Any');
   const [filterArea, setFilterArea] = useState('Any');
@@ -64,7 +64,7 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
     }
 
     // Location filter
-    if (filterLocation !== 'Lucknow') {
+    if (filterLocation !== 'All' && filterLocation !== 'Rudrapur (All)' && filterLocation !== 'Any') {
       list = list.filter((p) =>
         p.location.toLowerCase().includes(filterLocation.toLowerCase()) ||
         p.subLocation.toLowerCase().includes(filterLocation.toLowerCase())
@@ -122,7 +122,7 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.heroProperties}
-            alt="Premium Properties in Lucknow"
+            alt="Properties in Rudrapur & Udham Singh Nagar"
             className="w-full h-full object-cover object-[center_35%]"
           />
           {/* Subtle natural contrast gradient for text readability without washing out property photograph */}
@@ -132,7 +132,7 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 lg:py-16 w-full">
           <div className="max-w-xl">
             <p className="text-[10px] sm:text-xs lg:text-sm font-bold tracking-[0.2em] text-[#051329] uppercase mb-1 sm:mb-2">
-              PREMIUM PROPERTIES IN LUCKNOW
+              PROPERTIES IN RUDRAPUR & UDHAM SINGH NAGAR
             </p>
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#051329] tracking-tight mb-1">
               Properties
@@ -141,8 +141,8 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
               Find Your Perfect Property
             </p>
             <p className="text-slate-700 text-xs sm:text-sm lg:text-base leading-relaxed font-normal max-w-lg">
-              Explore a curated selection of premium villas, plots, houses and apartments in{' '}
-              <strong className="font-bold text-slate-900">Lucknow</strong>. Verified listings, expert guidance and
+              Explore a curated selection of residential plots, independent houses, villas and commercial opportunities in{' '}
+              <strong className="font-bold text-slate-900">Rudrapur & Udham Singh Nagar</strong>. Local guidance, site tours and
               personalised support — all in one place.
             </p>
           </div>
@@ -205,13 +205,14 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
                 onChange={(e) => setFilterLocation(e.target.value)}
                 className="w-full p-0 border-0 bg-transparent text-sm font-semibold text-slate-800 focus:ring-0 cursor-pointer"
               >
-                <option value="Lucknow">Lucknow (All)</option>
-                <option value="Gomti Nagar">Gomti Nagar</option>
-                <option value="Sushant Golf City">Sushant Golf City</option>
-                <option value="Faizabad Road">Faizabad Road</option>
-                <option value="Hazratganj">Hazratganj</option>
-                <option value="Alambagh">Alambagh</option>
-                <option value="Shaheed Path">Shaheed Path</option>
+                <option value="All">All Locations</option>
+                <option value="Rudrapur">Rudrapur</option>
+                <option value="Dineshpur">Dineshpur Road</option>
+                <option value="Pentagon">Pentagon Colony</option>
+                <option value="Kichha">Kichha Road</option>
+                <option value="Awas Vikas">Awas Vikas Corridor</option>
+                <option value="Nainital">Nainital Road Corridor</option>
+                <option value="Udham Singh Nagar">Udham Singh Nagar</option>
               </select>
             </div>
           </div>
@@ -428,7 +429,7 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
           <div className="lg:col-span-5 relative min-h-[170px] sm:min-h-[210px] lg:min-h-full">
             <img
               src={IMAGES.helpCtaInterior}
-              alt="Luxury living room in Lucknow"
+              alt="Interior living room showcase"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent to-[#06152a]/95"></div>
@@ -443,9 +444,9 @@ export const PropertiesPage: React.FC<PropertiesPageProps> = ({
               Need Help Choosing The Right Property?
             </h2>
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mb-4 sm:mb-6">
-              Get expert <span className="text-white font-semibold">advice</span>,{' '}
+              Get local <span className="text-white font-semibold">advice</span>,{' '}
               <span className="text-white font-semibold">site visits</span> and personalized property recommendations across{' '}
-              <span className="text-[#e5b976] font-semibold">Lucknow</span>.
+              <span className="text-[#e5b976] font-semibold">Rudrapur & Udham Singh Nagar</span>.
             </p>
             <div>
               <button

@@ -218,7 +218,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Subheading */}
             <div className="inline-block mb-1 sm:mb-2.5">
               <p className="text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-[0.2em] text-[#071426] font-sans">
-                VERIFIED PROPERTIES. A BRIGHTER TOMORROW.
+                RESIDENTIAL & PLOT GUIDANCE. A BRIGHTER TOMORROW.
               </p>
             </div>
 
@@ -234,7 +234,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Short Description */}
             <p className="text-slate-700 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl mb-3 sm:mb-6 font-normal">
               Explore residential plots, independent houses, and property opportunities in{' '}
-              <strong className="font-semibold text-slate-900">Rudrapur</strong> and nearby areas across Uttarakhand with verified guidance.
+              <strong className="font-semibold text-slate-900">Rudrapur</strong> and nearby areas across Uttarakhand with dedicated local guidance.
             </p>
 
             {/* Floating Filter Search Box - Moved downward into available lower space */}
@@ -345,10 +345,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <HomeIcon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.8] text-slate-800" />
               </div>
               <h3 className="text-[11px] sm:text-sm lg:text-base font-bold text-slate-900 leading-tight">
-                Verified Listings
+                Curated Showcase
               </h3>
               <p className="hidden sm:block text-xs text-slate-500 leading-snug mt-1 max-w-[190px]">
-                Carefully vetted properties with verified details.
+                Handpicked property concepts with transparent local guidance.
               </p>
             </div>
 
@@ -601,7 +601,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================= 5. ABOUT PROPERTY DARSHAN (PREVIEW SECTION) ================= */}
+      {/* ================= 5. ABOUT SHIV PROPERTY UTTARAKHAND (PREVIEW SECTION) ================= */}
       <section className="py-16 sm:py-20 bg-[#F9F8F6]" id="about-preview" data-purpose="about-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -623,7 +623,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <ShieldCheck className="w-6 h-6 stroke-[2]" />
                   </div>
                   <div>
-                    <span className="block text-base font-extrabold text-slate-900 leading-tight">Verified</span>
+                    <span className="block text-base font-extrabold text-slate-900 leading-tight">Guided</span>
                     <span className="text-[11px] font-semibold text-slate-500 leading-tight">Physical Site Tours</span>
                   </div>
                 </div>
@@ -768,7 +768,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         <span>Title & Revenue Check</span>
                       </div>
                       <span className="absolute bottom-2.5 left-2.5 text-white text-xs font-bold font-serif drop-shadow-xs">
-                        Clear Title Verification
+                        Title & Registry Guidance
                       </span>
                     </div>
                     <div className="p-4">
@@ -785,7 +785,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       onClick={() => onNavigate('contact')}
                       className="w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-[#d4a359] text-slate-800 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs"
                     >
-                      <span>Request Verification</span>
+                      <span>Inquire Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -962,7 +962,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </div>
 
                     <div className="pt-2.5 border-t border-slate-100 flex items-center justify-between text-xs">
-                      <span className="text-slate-400 font-medium">Verified Walkthrough</span>
+                      <span className="text-slate-400 font-medium">On-Site Walkthrough</span>
                       <span className="text-[#b87834] font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         <span>View Reel</span>
                         <ArrowRight className="w-3 h-3" />
@@ -1158,9 +1158,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
                 <div className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-[#b87834] shrink-0" />
-                  <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-slate-900 font-semibold">
-                    {CONTACT_CONFIG.email}
-                  </a>
+                  {CONTACT_CONFIG.email ? (
+                    <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-slate-900 font-semibold">
+                      {CONTACT_CONFIG.email}
+                    </a>
+                  ) : (
+                    <span className="italic text-slate-400">{CONTACT_CONFIG.displayEmailNotice}</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -1184,7 +1188,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
                   <h4 className="text-lg font-bold text-slate-900">Enquiry Ready for Dispatch</h4>
                   <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
-                    Thank you, <span className="font-semibold text-slate-900">{contactName || 'there'}</span>. Your enquiry for <span className="font-semibold">{contactType}</span> in Lucknow is prepared for direct delivery to our verified advisory desk.
+                    Thank you, <span className="font-semibold text-slate-900">{contactName || 'there'}</span>. Your enquiry for <span className="font-semibold">{contactType}</span> in Rudrapur is prepared for direct delivery to our advisory desk.
                   </p>
 
                   <div className="pt-2 space-y-2 max-w-sm mx-auto">
@@ -1285,7 +1289,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="e.g. Looking for a 4 BHK Villa in Gomti Nagar..."
+                      placeholder="e.g. Looking for an independent plot or house on Dineshpur Road..."
                       value={contactMessage}
                       onChange={(e) => setContactMessage(e.target.value)}
                       className="w-full text-xs px-3.5 py-2 rounded-lg sm:rounded-xl border border-slate-200 focus:border-[#d4a359] focus:outline-none bg-slate-50/50 resize-none"
@@ -1301,7 +1305,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </button>
 
                   <p className="text-[10px] text-center text-slate-400">
-                    We value your privacy. Direct response from verified Lucknow advisors.
+                    We value your privacy. Direct response from Shiv Property Uttarakhand advisors.
                   </p>
                 </form>
               )}

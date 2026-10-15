@@ -60,8 +60,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     }
 
     // Prepare direct delivery via confirmed WhatsApp business number
-    const formattedText = `Hello Property Darshan,\n\nI would like to enquire about properties in Lucknow:\n• Name: ${fullName.trim()}\n• Phone: ${phoneNumber.trim()}\n• Type: ${propertyType}\n• Requirements: ${message.trim()}\n\nPlease connect with me regarding verified options and site tours.`;
-    const waUrl = `https://wa.me/919721013815?text=${encodeURIComponent(formattedText)}`;
+    const formattedText = `Hello ${CONTACT_CONFIG.businessName},\n\nI would like to enquire about properties in Rudrapur, Uttarakhand:\n• Name: ${fullName.trim()}\n• Phone: ${phoneNumber.trim()}\n• Type: ${propertyType}\n• Requirements: ${message.trim()}\n\nPlease connect with me regarding available options and site tours.`;
+    const waUrl = `https://wa.me/${CONTACT_CONFIG.whatsappNumber}?text=${encodeURIComponent(formattedText)}`;
     
     setDispatchedWhatsAppUrl(waUrl);
     setSubmitted(true);
@@ -75,7 +75,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
         <div className="absolute inset-0 z-0">
           <img
             src={IMAGES.heroContact}
-            alt="Luxury Modern Villa Dusk"
+            alt="Modern Villa Dusk"
             className="w-full h-full object-cover object-right opacity-50 filter brightness-95 contrast-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#061224]/90 via-[#061224]/75 to-transparent"></div>
@@ -132,15 +132,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <div>
                     <span className="block text-xs font-medium text-slate-500 uppercase tracking-wider">Call Us</span>
                     <p className="text-lg font-bold text-[#091e3e] mt-0.5 tracking-tight">
-                      <a href="tel:9721013815" className="hover:text-[#c59344] transition-colors">
-                        9721013815
-                      </a>{' '}
-                      &nbsp;|&nbsp;{' '}
-                      <a href="tel:8809269208" className="hover:text-[#c59344] transition-colors">
-                        8809269208
+                      <a href={CONTACT_CONFIG.getTelLink()} className="hover:text-[#c59344] transition-colors">
+                        {CONTACT_CONFIG.displayPhones}
                       </a>
                     </p>
-                    <p className="text-xs text-slate-500 mt-0.5 font-medium">Mon - Sun, 9:00 AM to 8:00 PM</p>
+                    <p className="text-xs text-slate-500 mt-0.5 font-medium">{CONTACT_CONFIG.displayTiming}</p>
                   </div>
                 </div>
 
@@ -153,8 +149,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     <span className="block text-xs font-medium text-slate-500 uppercase tracking-wider">
                       Our Location
                     </span>
-                    <p className="text-base font-bold text-[#091e3e] mt-0.5">Lucknow, Uttar Pradesh</p>
-                    <p className="text-xs text-slate-500 mt-0.5">Property Tours Available Across Lucknow</p>
+                    <p className="text-base font-bold text-[#091e3e] mt-0.5">{CONTACT_CONFIG.city}, {CONTACT_CONFIG.state}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">Property Tours in Rudrapur &amp; Udham Singh Nagar</p>
                   </div>
                 </div>
 
@@ -225,7 +221,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     <h3 className="text-2xl font-bold text-[#091e3e]">Enquiry Prepared</h3>
                     <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
                       Thank you <span className="font-semibold text-slate-900">{fullName}</span>. Your enquiry for{' '}
-                      <span className="font-semibold text-slate-900">{propertyType}</span> has been formatted for direct delivery to our confirmed Lucknow advisory team.
+                      <span className="font-semibold text-slate-900">{propertyType}</span> has been formatted for direct delivery to our Rudrapur advisory team.
                     </p>
 
                     {/* Pre-filled summary card */}
@@ -292,7 +288,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       Enquire About a Property
                     </h3>
                     <p className="text-slate-500 text-sm leading-relaxed mb-6">
-                      Fill in your details to connect directly with our confirmed Lucknow real estate helpline.
+                      Fill in your details to connect directly with our Rudrapur real estate helpline.
                     </p>
 
                     {/* Validation Error Banner */}
@@ -410,7 +406,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       {/* Privacy & Dispatch Notice */}
                       <div className="flex items-center justify-center gap-2 text-slate-500 text-xs pt-1">
                         <Lock className="w-3.5 h-3.5 text-slate-400" />
-                        <span>Direct delivery to verified Lucknow advisor on WhatsApp +91 9721013815.</span>
+                        <span>Direct delivery to Shiv Property Uttarakhand on WhatsApp {CONTACT_CONFIG.displayWhatsApp}.</span>
                       </div>
                     </form>
                   </>
@@ -426,17 +422,17 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-200 overflow-hidden bg-[#f8fafc] grid grid-cols-1 lg:grid-cols-12 shadow-xs">
             {/* Interactive Style Realistic Stylized Map Canvas */}
-            <div className="lg:col-span-8 h-80 sm:h-96 relative bg-[#ebf3e8] overflow-hidden" data-purpose="lucknow-map-canvas">
+            <div className="lg:col-span-8 h-80 sm:h-96 relative bg-[#ebf3e8] overflow-hidden" data-purpose="rudrapur-map-canvas">
               <svg className="w-full h-full object-cover" preserveAspectRatio="none" viewBox="0 0 800 400">
                 <rect fill="#eaf2e7" height="400" width="800"></rect>
-                {/* Road networks */}
+                {/* Arterial Corridors & Road Networks */}
                 <path d="M -20,120 Q 250,140 400,210 T 820,290" fill="none" stroke="#ffffff" strokeWidth="6"></path>
                 <path d="M 120,-20 Q 180,180 280,420" fill="none" stroke="#ffffff" strokeWidth="5"></path>
                 <path d="M 450,-20 L 350,420" fill="none" stroke="#ffffff" strokeWidth="5"></path>
                 <path d="M 220,130 L 680,80" fill="none" stroke="#f1f5f9" strokeWidth="2.5" strokeDasharray="4 2"></path>
                 <path d="M 50,300 L 780,340" fill="none" stroke="#f1f5f9" strokeWidth="2.5"></path>
                 <path d="M 300,100 L 520,380" fill="none" stroke="#f1f5f9" strokeWidth="2.5"></path>
-                {/* Gomti River (Realistic Blue Ribbon) */}
+                {/* Kalyani River & Green Belt Ribbon */}
                 <path
                   d="M 160,-20 C 230,80 200,90 280,140 C 360,190 510,130 580,210 C 650,290 730,280 820,320"
                   fill="none"
@@ -452,48 +448,49 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   strokeWidth="6"
                 ></path>
                 <text fill="#0284c7" fontSize="10" fontWeight="600" opacity="0.85" transform="rotate(22 210 85)" x="210" y="85">
-                  Gomti River
+                  Kalyani River Corridor
                 </text>
                 <text fill="#0284c7" fontSize="10" fontWeight="600" opacity="0.85" transform="rotate(26 510 215)" x="510" y="215">
-                  Gomti River
+                  Green Belt Arterial
                 </text>
               </svg>
 
               {/* Map Landmarks Labels */}
               <div className="absolute top-16 left-16 text-center pointer-events-none">
                 <span className="text-xs font-bold text-slate-700 bg-white/70 px-1.5 py-0.5 rounded shadow-2xs">
-                  Hazratganj
+                  Dineshpur Road
                 </span>
+                <span className="text-[10px] text-slate-500 font-medium block">दिनेशपुर रोड</span>
               </div>
               <div className="absolute bottom-12 left-10 text-center pointer-events-none">
                 <span className="text-xs font-bold text-slate-700 bg-white/70 px-1.5 py-0.5 rounded shadow-2xs block">
-                  Alambagh
+                  Kashipur Bypass
                 </span>
-                <span className="text-[10px] text-slate-500 font-medium">आलमबाग</span>
+                <span className="text-[10px] text-slate-500 font-medium">काशीपुर बाईपास</span>
               </div>
               <div className="absolute bottom-16 left-48 text-center pointer-events-none">
                 <span className="text-xs font-bold text-slate-700 bg-white/70 px-1.5 py-0.5 rounded shadow-2xs block">
-                  Charbagh
+                  Awas Vikas
                 </span>
-                <span className="text-[10px] text-slate-500 font-medium">चारबाग</span>
+                <span className="text-[10px] text-slate-500 font-medium">आवास विकास</span>
               </div>
               <div className="absolute top-8 right-52 text-center pointer-events-none">
                 <span className="text-xs font-bold text-slate-700 bg-white/70 px-1.5 py-0.5 rounded shadow-2xs block">
-                  Gomti Nagar
+                  Nainital Highway (NH-109)
                 </span>
-                <span className="text-[10px] text-slate-500 font-medium">गोमती नगर</span>
+                <span className="text-[10px] text-slate-500 font-medium">नैनीताल हाईवे</span>
               </div>
               <div className="absolute bottom-16 right-48 text-center pointer-events-none">
                 <span className="text-xs font-bold text-slate-700 bg-white/70 px-1.5 py-0.5 rounded shadow-2xs block">
-                  Indira Nagar
+                  Pentagon Colony / Kichha Rd
                 </span>
-                <span className="text-[10px] text-slate-500 font-medium">इंदिरा नगर</span>
+                <span className="text-[10px] text-slate-500 font-medium">पेंटागन कॉलोनी / किच्छा रोड</span>
               </div>
 
-              {/* Central Lucknow Label */}
+              {/* Central Rudrapur Label */}
               <div className="absolute top-44 left-36 text-center pointer-events-none">
-                <span className="text-sm font-extrabold text-slate-800 tracking-wider">LUCKNOW</span>
-                <span className="text-xs block text-slate-600 font-semibold font-serif">लखनऊ</span>
+                <span className="text-sm font-extrabold text-slate-800 tracking-wider">RUDRAPUR</span>
+                <span className="text-xs block text-slate-600 font-semibold font-serif">रुद्रपुर (उधम सिंह नगर)</span>
               </div>
 
               {/* Prominent Red Location Pin */}
@@ -505,24 +502,24 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <div className="w-2.5 h-1 bg-black/30 rounded-full mx-auto blur-[1px] mt-0.5"></div>
                 </div>
                 <div className="bg-white/95 backdrop-blur-2xs px-2.5 py-1 rounded-md shadow-md border border-slate-200">
-                  <span className="block text-xs font-extrabold text-slate-900 leading-none">Lucknow</span>
-                  <span className="text-[10px] font-medium text-slate-500">Uttar Pradesh</span>
+                  <span className="block text-xs font-extrabold text-slate-900 leading-none">Rudrapur</span>
+                  <span className="text-[10px] font-medium text-slate-500">Udham Singh Nagar, Uttarakhand</span>
                 </div>
               </div>
             </div>
 
             {/* Right Side: Visit Our Location Info Panel */}
             <div className="lg:col-span-4 p-8 sm:p-10 flex flex-col justify-center bg-white" data-purpose="visit-panel">
-              <span className="text-[#ca9946] text-xs font-bold uppercase tracking-[0.2em] mb-1">Visit Our Location</span>
-              <h3 className="text-2xl font-extrabold text-[#091e3e] mb-3">Find Us in Lucknow</h3>
+              <span className="text-[#ca9946] text-xs font-bold uppercase tracking-[0.2em] mb-1">Visit Our Region</span>
+              <h3 className="text-2xl font-extrabold text-[#091e3e] mb-3">Find Us in Rudrapur</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                We are based in <strong className="font-bold text-slate-800">Lucknow</strong>, Uttar Pradesh and offer
-                property tours across prime locations. Get in touch to plan your site visit or discuss your requirements.
+                We are based in <strong className="font-bold text-slate-800">Rudrapur</strong>, Udham Singh Nagar, Uttarakhand and offer
+                guided site visits across developing corridors. Get in touch to schedule a site tour or discuss your property requirements.
               </p>
               <div>
                 <a
                   className="inline-flex items-center gap-2 border border-[#caa050] text-[#091e3e] hover:bg-[#cca050] hover:text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-200"
-                  href="https://maps.google.com/?q=Lucknow+Uttar+Pradesh"
+                  href="https://maps.google.com/?q=Rudrapur+Udham+Singh+Nagar+Uttarakhand"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -545,8 +542,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               <div className="w-12 h-12 rounded-full bg-[#f8f5ee] flex items-center justify-center text-slate-700 mb-3 shadow-2xs">
                 <HomeIcon className="w-5 h-5 text-slate-800" />
               </div>
-              <h4 className="text-sm font-bold text-[#091e3e] mb-1">Verified Listings</h4>
-              <p className="text-xs text-slate-500 leading-normal">100% genuine properties with verified details.</p>
+              <h4 className="text-sm font-bold text-[#091e3e] mb-1">Local Guidance</h4>
+              <p className="text-xs text-slate-500 leading-normal">Accompanied property tours and clear corridor insights.</p>
             </div>
 
             {/* Prop 2 */}

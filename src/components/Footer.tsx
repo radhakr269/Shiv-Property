@@ -44,7 +44,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               </div>
             </div>
             <p className="text-[11px] text-slate-400 font-medium tracking-wide text-right">
-              Verified Properties. <br className="sm:hidden" />
+              Property Guidance. <br className="sm:hidden" />
               <span className="text-[#e5b268]">Rudrapur & Beyond.</span>
             </p>
           </div>
@@ -215,10 +215,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               </div>
             </div>
             <p className="text-xs text-slate-400 mt-3 font-medium tracking-wide">
-              Verified Properties. A Brighter Tomorrow.
+              Property Guidance. A Brighter Tomorrow.
             </p>
             <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-              Rudrapur and Uttarakhand&apos;s trusted real estate advisory platform delivering authentic listings and hassle-free verified site visits.
+              Rudrapur and Uttarakhand&apos;s trusted real estate advisory platform assisting with property discovery and scheduled site visits.
             </p>
           </div>
 

@@ -32,7 +32,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             <source media="(max-width: 768px)" srcSet={IMAGES.heroMobile} />
             <img
               src={IMAGES.heroDesktop}
-              alt="Luxury Villa Property Darshan Hero"
+              alt="Shiv Property Uttarakhand Hero"
               className="w-full h-full object-cover object-[center_35%]"
             />
           </picture>
@@ -47,10 +47,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-[52px] font-extrabold text-[#0B192C] leading-[1.1] tracking-tight mb-2 sm:mb-4">
               About<br />
-              <span className="text-[#0B192C]">Property Darshan</span>
+              <span className="text-[#0B192C]">Shiv Property Uttarakhand</span>
             </h1>
             <p className="text-xs sm:text-sm lg:text-base text-[#475569] font-medium leading-relaxed mb-4 sm:mb-6 max-w-md">
-              Your trusted real estate partner in Lucknow, helping you find the right property for a better tomorrow.
+              Your trusted real estate partner in Rudrapur, Uttarakhand, helping you find the right property for a better tomorrow.
             </p>
 
             {/* Breadcrumbs */}
@@ -77,7 +77,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[16/11]">
                 <img
                   src={IMAGES.aboutInterior}
-                  alt="Luxury Lucknow Living Room Interior"
+                  alt="Luxury Living Room Interior"
                   className="w-full h-full object-cover object-[center_60%]"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl pointer-events-none"></div>
@@ -90,12 +90,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 OUR STORY
               </span>
               <h2 className="text-3xl sm:text-[34px] font-extrabold text-[#0B192C] leading-snug tracking-tight mb-6">
-                Helping You Find<br className="hidden sm:inline" /> Your Dream Property in Lucknow
+                Helping You Find<br className="hidden sm:inline" /> Your Dream Property in Rudrapur & Uttarakhand
               </h2>
               <div className="space-y-4 text-[14.5px] leading-relaxed text-[#556376]">
                 <p>
-                  At Property Darshan, we believe that a home is more than just a place — it&apos;s a new beginning, a better
-                  lifestyle, and a brighter future. Based in Lucknow, we are dedicated to helping our clients find the right
+                  At Shiv Property Uttarakhand, we believe that a home is more than just a place — it&apos;s a new beginning, a better
+                  lifestyle, and a brighter future. Based in Rudrapur, Udham Singh Nagar, we are dedicated to helping our clients find the right
                   properties that match their goals, whether it&apos;s a dream home, a smart investment, or a commercial space
                   for their business.
                 </p>
@@ -150,7 +150,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             direction="rtl"
             speed={32}
             cardWidthClass="w-[270px] sm:w-[290px]"
-            ariaLabel="Property Darshan Real Estate Services Carousel"
+            ariaLabel="Shiv Property Uttarakhand Real Estate Services Carousel"
             items={[
               // Card 1: Property Tours
               <div
@@ -165,7 +165,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     Property Tours
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    Explore verified residential and commercial properties in Lucknow with personalized guided tours.
+                    Explore residential and commercial property opportunities in Rudrapur and Udham Singh Nagar with personalized guided tours.
                   </p>
                 </div>
                 <button
@@ -190,7 +190,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     Investment Insights
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    Get expert advice on property investments to help you make informed and profitable capital decisions.
+                    Get local guidance on plotted developments and independent properties to help you make informed decisions.
                   </p>
                 </div>
                 <a
@@ -217,7 +217,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     Real Estate Updates
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    Stay updated with the latest market trends, new launches, and growth opportunities across Lucknow.
+                    Stay updated with developing corridors, new road layouts, and opportunities across Rudrapur and Udham Singh Nagar.
                   </p>
                 </div>
                 <button
@@ -242,7 +242,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     Buy / Sell / Rent Support
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    End-to-end assistance for buying, selling, or renting properties with verified title documentation.
+                    End-to-end assistance for buying, selling, or leasing properties with local title check guidance.
                   </p>
                 </div>
                 <button
@@ -264,13 +264,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold tracking-[0.2em] text-[#DF9E52] uppercase mb-2 block">
-              WHY CHOOSE PROPERTY DARSHAN
+              WHY CHOOSE SHIV PROPERTY UTTARAKHAND
             </span>
             <h2 className="text-2xl sm:text-[32px] font-extrabold text-[#0B192C] tracking-tight mb-2">
               A Trusted Partner in Your Journey
             </h2>
             <p className="text-xs sm:text-sm text-[#606D7F]">
-              We go beyond listings — offering verified inspections and honest advice.
+              We go beyond listings — offering guided site visits and honest local advice.
             </p>
           </div>
 
@@ -280,9 +280,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             direction="ltr"
             speed={30}
             cardWidthClass="w-[270px] sm:w-[290px]"
-            ariaLabel="Why Choose Property Darshan Trust Pillars"
+            ariaLabel="Why Choose Shiv Property Uttarakhand Trust Pillars"
             items={[
-              // Pillar 1: Verified Listings
+              // Pillar 1: Curated Showcase
               <div
                 key="why-1"
                 className="bg-white border border-gray-100 hover:border-[#DF9E52] rounded-2xl p-6 text-center flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300 h-[260px] group"
@@ -292,14 +292,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     <ShieldCheck className="w-6 h-6 stroke-[1.8]" />
                   </div>
                   <h3 className="text-base font-bold text-[#0B192C] mb-2 group-hover:text-[#DF9E52] transition-colors">
-                    Verified Listings
+                    Curated Showcase
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    Carefully vetted properties with verified details and genuine photographs.
+                    Carefully selected property concepts with local market insights and on-ground assistance.
                   </p>
                 </div>
                 <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                  100% Genuine Physical Check
+                  Accompanied Site Tours
                 </span>
               </div>,
 
@@ -316,11 +316,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                     Local Expertise
                   </h3>
                   <p className="text-xs text-[#626E80] leading-relaxed">
-                    In-depth knowledge of Lucknow&apos;s real estate corridors, pricing and connectivity.
+                    In-depth knowledge of Rudrapur and Udham Singh Nagar real estate corridors, pricing and connectivity.
                   </p>
                 </div>
                 <span className="text-[11px] font-bold text-[#DF9E52] bg-amber-50 px-2.5 py-0.5 rounded-full">
-                  Lucknow Native Advisors
+                  Local Uttarakhand Advisors
                 </span>
               </div>,
 
@@ -362,7 +362,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </p>
                 </div>
                 <span className="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                  Direct Owner Interaction
+                  Direct Consultation
                 </span>
               </div>,
             ]}
@@ -390,7 +390,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               A Better Tomorrow Starts with the Right Property.
             </h2>
             <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6 max-w-lg">
-              Let Property Darshan guide you to verified homes, plots and commercial investments in Lucknow.
+              Let Shiv Property Uttarakhand guide you to residential plots, homes and commercial opportunities in Rudrapur and Udham Singh Nagar.
             </p>
             <button
               onClick={() => onNavigate('properties')}
