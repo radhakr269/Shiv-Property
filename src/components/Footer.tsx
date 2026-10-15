@@ -27,25 +27,25 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                   viewBox="0 0 32 36"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect fill="#D4A359" height="20" opacity="0.8" rx="1" width="6" x="2" y="16"></rect>
-                  <rect fill="#E5B268" height="28" rx="1" width="6" x="10" y="8"></rect>
-                  <rect fill="#F4CA88" height="34" rx="1" width="6" x="18" y="2"></rect>
-                  <rect fill="#C58E3D" height="24" opacity="0.9" rx="1" width="5" x="26" y="12"></rect>
-                  <path d="M0 35H32V36H0z" fill="#D4A359"></path>
+                  <path d="M16 2L2 14V34H12V24H20V34H30V14L16 2Z" fill="#F4CA88" opacity="0.95" />
+                  <path d="M16 5L5 14.5V32H10V22H22V32H27V14.5L16 5Z" fill="#E5B268" />
+                  <path d="M16 9L9 15.5V30H13V22H19V30H23V15.5L16 9Z" fill="#D4A359" />
+                  <path d="M16 13L13 16V22H19V16L16 13Z" fill="#C58E3D" opacity="0.95" />
+                  <path d="M0 35H32V36H0z" fill="#D4A359" />
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] tracking-[0.22em] font-semibold text-[#e5b268] font-sans uppercase leading-none">
-                  PROPERTY
+                <span className="text-[10px] tracking-[0.22em] font-bold text-[#e5b268] font-sans uppercase leading-none">
+                  SHIV PROPERTY
                 </span>
-                <span className="text-lg font-bold tracking-tight text-white leading-tight font-serif mt-0.5">
-                  दर्शन
+                <span className="text-base font-bold tracking-tight text-white leading-tight font-serif mt-0.5">
+                  UTTARAKHAND
                 </span>
               </div>
             </div>
             <p className="text-[11px] text-slate-400 font-medium tracking-wide text-right">
-              Premium Properties. <br className="sm:hidden" />
-              <span className="text-[#e5b268]">A Brighter Tomorrow.</span>
+              Verified Properties. <br className="sm:hidden" />
+              <span className="text-[#e5b268]">Rudrapur & Beyond.</span>
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#e5b976] shrink-0" />
                 <a href={CONTACT_CONFIG.getTelLink()} className="hover:text-white transition-colors truncate">
-                  {CONTACT_CONFIG.primaryPhone}
+                  {CONTACT_CONFIG.displayPhones}
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -73,15 +73,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                   WhatsApp
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-[#e5b976] shrink-0" />
-                <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-white transition-colors truncate">
-                  {CONTACT_CONFIG.email}
-                </a>
-              </div>
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#e5b976] shrink-0 mt-0.5" />
-                <span className="line-clamp-2">{CONTACT_CONFIG.city}, UP</span>
+                <span className="line-clamp-2">{CONTACT_CONFIG.city}, {CONTACT_CONFIG.state}</span>
               </div>
               <div className="flex items-center gap-2 pt-0.5 text-[#e5b976]">
                 <Instagram className="w-3.5 h-3.5 shrink-0" />
@@ -143,16 +137,30 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#e5b976] text-white hover:text-[#051329] flex items-center justify-center transition-colors"
-                title="Follow on Instagram @_property.darshan_"
+                title={`Follow on Instagram ${CONTACT_CONFIG.instagramHandle}`}
               >
                 <Instagram className="w-3.5 h-3.5" />
               </a>
+              {CONTACT_CONFIG.youtubeUrl && (
+                <a
+                  href={CONTACT_CONFIG.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#e5b976] text-white hover:text-[#051329] flex items-center justify-center transition-colors"
+                  title="Official YouTube Channel"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
 
           {/* Row 4 — Bottom Copyright and Policies */}
           <div className="pt-2 flex flex-col items-center justify-center text-[10px] text-slate-500 gap-1.5 text-center">
-            <p>© {currentYear} Property Darshan. All rights reserved.</p>
+            <p>© {currentYear} Shiv Property Uttarakhand. All rights reserved.</p>
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => setLegalModal('privacy')}
@@ -172,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                 onClick={() => setLegalModal('rera')}
                 className="hover:text-slate-300 transition-colors underline-offset-2 hover:underline"
               >
-                RERA Info
+                RERA Guidance
               </button>
             </div>
           </div>
@@ -190,27 +198,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                   viewBox="0 0 32 36"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect fill="#D4A359" height="20" opacity="0.8" rx="1" width="6" x="2" y="16"></rect>
-                  <rect fill="#E5B268" height="28" rx="1" width="6" x="10" y="8"></rect>
-                  <rect fill="#F4CA88" height="34" rx="1" width="6" x="18" y="2"></rect>
-                  <rect fill="#C58E3D" height="24" opacity="0.9" rx="1" width="5" x="26" y="12"></rect>
-                  <path d="M0 35H32V36H0z" fill="#D4A359"></path>
+                  <path d="M16 2L2 14V34H12V24H20V34H30V14L16 2Z" fill="#F4CA88" opacity="0.95" />
+                  <path d="M16 5L5 14.5V32H10V22H22V32H27V14.5L16 5Z" fill="#E5B268" />
+                  <path d="M16 9L9 15.5V30H13V22H19V30H23V15.5L16 9Z" fill="#D4A359" />
+                  <path d="M16 13L13 16V22H19V16L16 13Z" fill="#C58E3D" opacity="0.95" />
+                  <path d="M0 35H32V36H0z" fill="#D4A359" />
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-[12px] tracking-[0.25em] font-semibold text-[#e5b268] font-sans uppercase leading-none">
-                  PROPERTY
+                <span className="text-[12px] tracking-[0.22em] font-bold text-[#e5b268] font-sans uppercase leading-none">
+                  SHIV PROPERTY
                 </span>
                 <span className="text-xl font-bold tracking-tight text-white leading-tight font-serif mt-0.5">
-                  दर्शन
+                  UTTARAKHAND
                 </span>
               </div>
             </div>
             <p className="text-xs text-slate-400 mt-3 font-medium tracking-wide">
-              Premium Properties. A Brighter Tomorrow.
+              Verified Properties. A Brighter Tomorrow.
             </p>
             <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-              Lucknow&apos;s most trusted luxury real estate platform delivering authentic listings and hassle-free verified site visits.
+              Rudrapur and Uttarakhand&apos;s trusted real estate advisory platform delivering authentic listings and hassle-free verified site visits.
             </p>
           </div>
 
@@ -267,12 +275,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                   WhatsApp: {CONTACT_CONFIG.displayWhatsApp}
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#e5b976] shrink-0" />
-                <a href={`mailto:${CONTACT_CONFIG.email}`} className="hover:text-white transition-colors">
-                  {CONTACT_CONFIG.email}
-                </a>
-              </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#e5b976] shrink-0 mt-0.5" />
                 <span>{CONTACT_CONFIG.address}</span>
@@ -286,9 +288,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
 
           {/* Col 4: Follow Us */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Follow Us</h4>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">Official Channels</h4>
             <p className="text-xs text-slate-400 mb-3">
-              Follow for daily property updates, video tours, and investment insights across Lucknow.
+              Follow for daily property updates, video tours, and investment opportunities in Rudrapur and Uttarakhand.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -297,10 +299,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full bg-white text-[#051329] hover:bg-[#e5b976] flex items-center justify-center transition-colors"
-                title="Follow on Instagram"
+                title={`Follow on Instagram ${CONTACT_CONFIG.instagramHandle}`}
               >
                 <Instagram className="w-4 h-4" />
               </a>
+              {CONTACT_CONFIG.youtubeUrl && (
+                <a
+                  href={CONTACT_CONFIG.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-9 h-9 rounded-full bg-white text-[#051329] hover:bg-[#e5b976] flex items-center justify-center transition-colors"
+                  title="Official YouTube Channel"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+              )}
             </div>
             <div className="mt-4 pt-3 border-t border-slate-800 text-[11px] text-[#e5b976] font-medium">
               Instagram: <a href={CONTACT_CONFIG.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">{CONTACT_CONFIG.instagramHandle}</a>
@@ -310,7 +326,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
 
         {/* Desktop Bottom Bar: Copyright & Terms */}
         <div className="hidden md:flex pt-6 flex-row items-center justify-between text-xs text-slate-500">
-          <p>© {currentYear} Property Darshan. All rights reserved.</p>
+          <p>© {currentYear} Shiv Property Uttarakhand. All rights reserved.</p>
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setLegalModal('privacy')}
@@ -330,7 +346,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               onClick={() => setLegalModal('rera')}
               className="hover:text-slate-300 transition-colors underline-offset-2 hover:underline"
             >
-              RERA Compliance
+              RERA Guidance
             </button>
           </div>
         </div>
@@ -358,9 +374,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
                 <h3 className="text-xl font-bold text-slate-900">
                   {legalModal === 'privacy' && 'Privacy Policy'}
                   {legalModal === 'terms' && 'Terms & Conditions'}
-                  {legalModal === 'rera' && 'RERA Compliance & Verification Notice'}
+                  {legalModal === 'rera' && 'Statutory & Land Verification Guidance'}
                 </h3>
-                <p className="text-xs text-slate-500">Property Darshan • Lucknow, Uttar Pradesh</p>
+                <p className="text-xs text-slate-500">Shiv Property Uttarakhand • Rudrapur, Uttarakhand</p>
               </div>
             </div>
 
@@ -368,20 +384,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               {legalModal === 'privacy' && (
                 <>
                   <p>
-                    <strong>1. Commitment to Privacy:</strong> Property Darshan respects your privacy. We collect personal details (full name, contact telephone number, and property preferences) solely for the purpose of assisting your property search, arranging accompanied site visits, and dispatching matching property documentation in Lucknow.
+                    <strong>1. Commitment to Privacy:</strong> Shiv Property Uttarakhand respects your privacy. We collect personal details (full name, contact telephone number, and property preferences) solely for the purpose of assisting your property search, arranging accompanied site visits, and sharing property details in Rudrapur and surrounding Uttarakhand areas.
                   </p>
                   <p>
                     <strong>2. Zero Data Selling:</strong> We never sell, rent, or lease your contact information or personal data to third-party telemarketers or external advertisers.
                   </p>
                   <p>
-                    <strong>3. Direct Communication:</strong> By submitting an enquiry form, you authorize our verified Lucknow property advisors to contact you via direct phone call, SMS, or WhatsApp regarding your requested property criteria.
+                    <strong>3. Direct Communication:</strong> By submitting an enquiry form, you authorize our property advisors to contact you via direct phone call, SMS, or WhatsApp regarding your requested property criteria.
                   </p>
                   <p>
-                    <strong>4. Data Removal Requests:</strong> You may at any time request the deletion of your enquiry history and contact record by emailing us at{' '}
-                    <a href={`mailto:${CONTACT_CONFIG.email}`} className="text-[#b87834] font-semibold underline">
-                      {CONTACT_CONFIG.email}
-                    </a>{' '}
-                    or sending a WhatsApp message to {CONTACT_CONFIG.displayWhatsApp}.
+                    <strong>4. Data Removal Requests:</strong> You may at any time request the deletion of your enquiry history and contact record by messaging us on WhatsApp at {CONTACT_CONFIG.displayWhatsApp} or calling {CONTACT_CONFIG.displayPhones}.
                   </p>
                 </>
               )}
@@ -389,16 +401,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               {legalModal === 'terms' && (
                 <>
                   <p>
-                    <strong>1. Advisory Scope:</strong> Property Darshan operates as a premium real estate advisory and tour coordination service in Lucknow. We assist buyers and investors with property discovery, site tours, and developer coordination.
+                    <strong>1. Advisory Scope:</strong> Shiv Property Uttarakhand operates as a real estate advisory and tour coordination service in Rudrapur, Uttarakhand. We assist buyers and investors with property discovery, site tours, and local coordination.
                   </p>
                   <p>
-                    <strong>2. Showcase & Sample Listings Notice:</strong> Properties, floor plans, dimensions, and indicative price figures presented on this platform are sample showcase representations. Final prices, unit availability, and specifications are subject to written confirmation from respective developers or legal property owners.
+                    <strong>2. Showcase & Sample Listings Notice:</strong> Properties, floor plans, dimensions, and indicative price figures presented on this platform are sample showcase representations. Final prices, unit availability, and specifications are subject to written confirmation from respective sellers or legal property owners.
                   </p>
                   <p>
-                    <strong>3. Due Diligence:</strong> While Property Darshan verifies developer credentials and site status prior to scheduling tours, all prospective purchasers are strongly advised to perform independent legal title deed searches and municipal sanction checks before committing any financial booking tokens.
+                    <strong>3. Due Diligence:</strong> All prospective purchasers are strongly advised to perform independent legal title deed searches, revenue land record checks, and municipal sanction verifications before committing any financial booking tokens.
                   </p>
                   <p>
-                    <strong>4. Governing Law:</strong> All advisory interactions and transactions coordinated in connection with Property Darshan are subject to the exclusive jurisdiction of the competent courts in Lucknow, Uttar Pradesh.
+                    <strong>4. Governing Law:</strong> All advisory interactions and transactions coordinated in connection with Shiv Property Uttarakhand are subject to the jurisdiction of the competent courts in Udham Singh Nagar district, Uttarakhand.
                   </p>
                 </>
               )}
@@ -406,21 +418,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, variant = 'full' }) 
               {legalModal === 'rera' && (
                 <>
                   <p>
-                    <strong>1. UP-RERA Verification:</strong> The Real Estate (Regulation and Development) Act (RERA) protects property buyers in Uttar Pradesh. Property Darshan strictly advocates transparency and advises all buyers to verify project registrations on the official government portal{' '}
-                    <a
-                      href="https://www.up-rera.in"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#b87834] font-semibold underline"
-                    >
-                      www.up-rera.in
-                    </a>.
+                    <strong>1. Statutory Transparency:</strong> In accordance with the Real Estate (Regulation and Development) Act (RERA) and Uttarakhand statutory norms, prospective buyers and investors are advised to verify applicable statutory permissions and revenue records before entering into binding agreements.
                   </p>
                   <p>
-                    <strong>2. Project Disclosures:</strong> We do not publish unverified RERA registration numbers. For any specific residential or commercial project listed, our team facilitates access to the developer&apos;s verified sanction documents, approved layouts, and RERA registration certificates upon request.
+                    <strong>2. Project Disclosures:</strong> We do not publish unverified RERA registration numbers or make unverified statutory claims. For any specific residential or plotted development, our team assists buyers in requesting developer documentation and verifying municipal records.
                   </p>
                   <p>
-                    <strong>3. Direct Enquiry:</strong> To request verified RERA documentation for any shortlisted property, contact our advisory desk directly on {CONTACT_CONFIG.displayWhatsApp}.
+                    <strong>3. Direct Enquiry:</strong> To request documentation or site inspection for any shortlisted property, contact our advisory desk directly on {CONTACT_CONFIG.displayWhatsApp}.
                   </p>
                 </>
               )}

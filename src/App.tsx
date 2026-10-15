@@ -17,10 +17,10 @@ import { X, Heart, ArrowRight, Trash2 } from 'lucide-react';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'properties' | 'property-detail' | 'about' | 'services' | 'contact'>('home');
-  const [selectedPropertySlug, setSelectedPropertySlug] = useState<string>('luxury-villa-gomti-nagar');
+  const [selectedPropertySlug, setSelectedPropertySlug] = useState<string>(PROPERTIES[0]?.slug || 'residential-plot-dineshpur-road');
   const [favorites, setFavorites] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('property_darshan_favorites');
+      const saved = localStorage.getItem('shiv_property_favorites') || localStorage.getItem('property_darshan_favorites');
       if (!saved) return [];
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed)) {
@@ -34,14 +34,14 @@ export default function App() {
   });
   const [favoritesModalOpen, setFavoritesModalOpen] = useState(false);
   const [searchFilters, setSearchFilters] = useState<{ location: string; type: string; budget: string }>({
-    location: 'Lucknow',
+    location: 'Rudrapur',
     type: 'Any',
     budget: 'Any',
   });
 
   useEffect(() => {
     try {
-      localStorage.setItem('property_darshan_favorites', JSON.stringify(favorites));
+      localStorage.setItem('shiv_property_favorites', JSON.stringify(favorites));
     } catch {
       // ignore
     }

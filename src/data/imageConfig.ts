@@ -1,9 +1,10 @@
 /**
- * Centralized image management for Property Darshan
- * All images are stored locally in /public/image/
+ * Centralized image management for Shiv Property Uttarakhand
+ * All architectural and landscape photographs are preserved locally in /public/image/
  */
 export const IMAGES = {
-  logo: '/image/property-darshan-logo.svg',
+  logo: '/image/shiv-property-logo.svg',
+  logoFallback: '/image/property-darshan-logo.svg',
   heroDesktop: '/image/hero-desktop.jpg',
   heroMobile: '/image/hero-mobile.jpg',
   heroProperties: '/image/hero-properties.jpg',
@@ -12,7 +13,8 @@ export const IMAGES = {
   aboutInterior: '/image/about-interior.jpg',
   helpCtaInterior: '/image/help-cta-interior.jpg',
   contact: '/image/hero-contact.jpg',
-  skylineLucknow: '/image/skyline-lucknow.jpg',
+  skylineCorridor: '/image/skyline-lucknow.jpg',
+  skylineLucknow: '/image/skyline-lucknow.jpg', // preserved alias for backwards compatibility
   detailVillaMain: '/image/detail-villa-main.jpg',
   gallery: {
     living: '/image/gallery-living.jpg',

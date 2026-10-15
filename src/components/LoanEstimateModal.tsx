@@ -63,7 +63,7 @@ export const LoanEstimateModal: React.FC<LoanEstimateModalProps> = ({ property, 
           </div>
         </div>
         <p className="text-xs text-slate-500 mb-5">
-          {property.title} · Gomti Nagar, Lucknow (Listing Price: {property.price})
+          {property.title} · {property.location} (Listing Price: {property.price})
         </p>
 
         {/* EMI Result Card */}
@@ -165,7 +165,7 @@ export const LoanEstimateModal: React.FC<LoanEstimateModalProps> = ({ property, 
 
         <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
           <p className="text-[11px] text-slate-500 leading-tight">
-            *Indicative estimates based on standard bank rates in Lucknow (SBI, HDFC, ICICI).
+            *Indicative estimates based on standard bank lending rates (SBI, HDFC, ICICI, PNB).
           </p>
           <a
             href={CONTACT_CONFIG.getWhatsAppLink(property.title, `Home Loan assistance for ${formatCurrency(monthlyEmi)}/month EMI`)}

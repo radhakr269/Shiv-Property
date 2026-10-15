@@ -49,14 +49,14 @@ export const HomePage: React.FC<HomePageProps> = ({
   onToggleFavorite,
   onSearch,
 }) => {
-  const [selectedLocation, setSelectedLocation] = useState('Lucknow');
+  const [selectedLocation, setSelectedLocation] = useState('Rudrapur');
   const [selectedType, setSelectedType] = useState('Any');
   const [selectedBudget, setSelectedBudget] = useState('Any');
   const [scheduleModalOpen, setScheduleModalOpen] = useState(false);
 
   const [contactName, setContactName] = useState('');
   const [contactPhone, setContactPhone] = useState('');
-  const [contactType, setContactType] = useState('Villa');
+  const [contactType, setContactType] = useState('Plot');
   const [contactMessage, setContactMessage] = useState('');
   const [contactSubmitted, setContactSubmitted] = useState(false);
   const [contactWaLink, setContactWaLink] = useState('');
@@ -88,8 +88,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       return;
     }
 
-    const formatted = `Hello Property Darshan,\n\nI would like to enquire about ${contactType} properties in Lucknow.\n• Name: ${contactName.trim()}\n• Contact Phone: ${contactPhone.trim()}\n• Property Type: ${contactType}${contactMessage.trim() ? `\n• Notes: ${contactMessage.trim()}` : ''}\n\nPlease share suitable options and availability.`;
-    const url = `https://wa.me/919721013815?text=${encodeURIComponent(formatted)}`;
+    const formatted = `Hello ${CONTACT_CONFIG.businessName},\n\nI would like to enquire about ${contactType} properties in Rudrapur, Uttarakhand.\n• Name: ${contactName.trim()}\n• Contact Phone: ${contactPhone.trim()}\n• Property Type: ${contactType}${contactMessage.trim() ? `\n• Notes: ${contactMessage.trim()}` : ''}\n\nPlease share suitable options and availability.`;
+    const url = `https://wa.me/${CONTACT_CONFIG.whatsappNumber}?text=${encodeURIComponent(formatted)}`;
     setContactWaLink(url);
     setContactSubmitted(true);
   };
@@ -103,50 +103,50 @@ export const HomePage: React.FC<HomePageProps> = ({
       title: 'Luxury Villas',
       filter: 'Villa',
       count: `${properties.filter((p) => p.type === 'Villa').length} Properties`,
-      priceHint: 'From ₹ 2.85 Cr',
+      priceHint: 'From ₹ 95 Lakhs',
       image: IMAGES.properties.villa1,
       icon: Building2,
-      description: 'Private pools, lush landscaped lawns and premium gated architecture.',
+      description: 'Private garden spaces, premium elevations, and open serene surroundings.',
     },
     {
       id: 'plots',
       title: 'Residential Plots',
       filter: 'Plot',
       count: `${properties.filter((p) => p.type === 'Plot').length} Properties`,
-      priceHint: 'From ₹ 1.25 Cr',
+      priceHint: 'From ₹ 25 Lakhs',
       image: IMAGES.properties.plot1,
       icon: TreePine,
-      description: 'Wide 40ft avenues, RERA-approved gated layouts ready for custom build.',
+      description: 'Demarcated plots with 30ft wide roads, ready registry and fast connectivity.',
     },
     {
       id: 'houses',
       title: 'Independent Houses',
       filter: 'House',
       count: `${properties.filter((p) => p.type === 'House').length} Properties`,
-      priceHint: 'From ₹ 1.65 Cr',
+      priceHint: 'From ₹ 55 Lakhs',
       image: IMAGES.properties.house1,
       icon: HomeIcon,
       description: 'Multi-floor residences with private terraces, parking and zero shared walls.',
     },
     {
       id: 'apartments',
-      title: 'Premium Apartments',
+      title: 'Apartments & Floors',
       filter: 'Apartment',
       count: `${properties.filter((p) => p.type === 'Apartment').length} Properties`,
-      priceHint: 'From ₹ 1.20 Cr',
+      priceHint: 'From ₹ 35 Lakhs',
       image: IMAGES.properties.apartment1,
       icon: Building,
-      description: 'Skyline balconies, high-speed elevators, clubhouse and swimming pool.',
+      description: 'Comfortable living with good security, parking and convenient road access.',
     },
     {
       id: 'commercial',
       title: 'Commercial Properties',
       filter: 'Commercial',
       count: `${properties.filter((p) => p.type === 'Commercial').length} Properties`,
-      priceHint: 'From ₹ 3.75 Cr',
+      priceHint: 'From ₹ 1.85 Cr',
       image: IMAGES.properties.commercial1,
       icon: Briefcase,
-      description: 'High-visibility highway corridor plots and prime showroom spaces.',
+      description: 'High-visibility highway corridor plots and prime commercial opportunities.',
     },
   ];
 
@@ -154,39 +154,39 @@ export const HomePage: React.FC<HomePageProps> = ({
   const propertyTours = [
     {
       id: 'tour-1',
-      title: 'Luxury 4 BHK Villa Walkthrough',
-      location: 'Gomti Nagar, Lucknow',
+      title: 'Residential Plot Layout & 30ft Road',
+      location: 'Dineshpur Road, Rudrapur',
       duration: '1:45 min',
-      image: IMAGES.detailVillaMain,
-      tag: 'Trending Reel',
-      propertySlug: 'luxury-villa-gomti-nagar',
+      image: IMAGES.properties.plot1,
+      tag: 'Site Reel',
+      propertySlug: 'residential-plot-dineshpur-road',
     },
     {
       id: 'tour-2',
-      title: 'Gated Residential Plot Layout',
-      location: 'Sushant Golf City, Lucknow',
+      title: 'Independent House Walkthrough',
+      location: 'Pentagon Colony, Rudrapur',
       duration: '1:20 min',
-      image: IMAGES.properties.plot1,
-      tag: 'Site Tour',
-      propertySlug: 'premium-plot-sushant-golf-city',
+      image: IMAGES.properties.house1,
+      tag: 'Home Tour',
+      propertySlug: 'independent-house-pentagon-colony',
     },
     {
       id: 'tour-3',
-      title: 'Evening Elevation & Private Pool',
-      location: 'Shaheed Path, Lucknow',
+      title: 'Architectural Elevation & Garden',
+      location: 'Highway Corridor, Rudrapur',
       duration: '2:10 min',
       image: IMAGES.gallery.evening,
-      tag: 'Architectural Tour',
-      propertySlug: 'modern-villa-sushant-golf-city',
+      tag: 'Architectural Reel',
+      propertySlug: 'luxury-villa-rudrapur',
     },
     {
       id: 'tour-4',
-      title: 'Modern Independent Designer House',
-      location: 'Faizabad Road, Lucknow',
+      title: 'Duplex Residence Living Area',
+      location: 'Central Rudrapur, Uttarakhand',
       duration: '1:30 min',
-      image: IMAGES.properties.house1,
+      image: IMAGES.detailVillaMain,
       tag: 'Interior Reel',
-      propertySlug: 'independent-house-faizabad-road',
+      propertySlug: 'duplex-house-rudrapur-central',
     },
   ];
 
@@ -204,7 +204,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <source media="(max-width: 768px)" srcSet={IMAGES.heroMobile} />
             <img
               src={IMAGES.heroDesktop}
-              alt="Luxury Modern Villa in Lucknow with Pool"
+              alt="Residential plots and homes in Rudrapur, Uttarakhand"
               className="w-full h-full object-cover object-center"
             />
           </picture>
@@ -218,24 +218,23 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Subheading */}
             <div className="inline-block mb-1 sm:mb-2.5">
               <p className="text-[10px] sm:text-xs lg:text-sm font-bold uppercase tracking-[0.2em] text-[#071426] font-sans">
-                PREMIUM PROPERTIES. A BRIGHTER TOMORROW.
+                VERIFIED PROPERTIES. A BRIGHTER TOMORROW.
               </p>
             </div>
 
             {/* Main Title with Script Accent */}
             <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-[#071426] tracking-tight leading-[1.12] mb-1 sm:mb-2.5">
               Find Your <br className="hidden sm:inline" />
-              <span className="sm:block text-slate-900 ml-1 sm:ml-0">Dream Property</span>
+              <span className="sm:block text-slate-900 ml-1 sm:ml-0">Next Address</span>
               <span className="block font-script font-bold text-2xl sm:text-4xl lg:text-5xl xl:text-6xl text-[#c58e3d] mt-0.5 sm:mt-1 lowercase first-letter:capitalize">
-                with property darshan
+                with shiv property
               </span>
             </h1>
 
             {/* Short Description */}
             <p className="text-slate-700 text-xs sm:text-base lg:text-lg leading-relaxed max-w-xl mb-3 sm:mb-6 font-normal">
-              Discover premium homes, villas, plots and investment opportunities in{' '}
-              <strong className="font-semibold text-slate-900">Lucknow</strong> with expert guidance and personalised
-              property tours.
+              Explore residential plots, independent houses, and property opportunities in{' '}
+              <strong className="font-semibold text-slate-900">Rudrapur</strong> and nearby areas across Uttarakhand with verified guidance.
             </p>
 
             {/* Floating Filter Search Box - Moved downward into available lower space */}
@@ -260,13 +259,11 @@ export const HomePage: React.FC<HomePageProps> = ({
                         onChange={(e) => setSelectedLocation(e.target.value)}
                         className="w-full bg-transparent text-[11px] sm:text-sm font-bold text-slate-900 border-none p-0 focus:ring-0 cursor-pointer truncate"
                       >
-                        <option value="Lucknow">Lucknow</option>
-                        <option value="Gomti Nagar">Gomti Nagar</option>
-                        <option value="Sushant Golf City">Sushant Golf City</option>
-                        <option value="Faizabad Road">Faizabad Road</option>
-                        <option value="Hazratganj">Hazratganj</option>
-                        <option value="Alambagh">Alambagh</option>
-                        <option value="Shaheed Path">Shaheed Path</option>
+                        <option value="Rudrapur">Rudrapur</option>
+                        <option value="Dineshpur Road">Dineshpur Road</option>
+                        <option value="Pentagon Colony">Pentagon Colony</option>
+                        <option value="Kichha Road">Kichha Road</option>
+                        <option value="Udham Singh Nagar">Udham Singh Nagar</option>
                       </select>
                     </div>
                   </div>
@@ -407,10 +404,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                 FEATURED PROPERTIES
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#071426] tracking-tight font-sans">
-                Handpicked Properties in Lucknow
+                Handpicked Properties in Rudrapur
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl font-normal">
-                Explore our curated selection of premium villas, plots and homes in the best locations of Lucknow.
+                Explore our curated selection of residential plots, houses and property investments in Rudrapur and Udham Singh Nagar.
               </p>
             </div>
 
@@ -537,7 +534,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 Explore Property Categories
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl font-normal">
-                Choose the property type that fits your vision — from private villas to investment plots and commercial corridors across Lucknow.
+                Choose the property type that fits your vision — from residential plots to independent homes and commercial corridors across Rudrapur.
               </p>
             </div>
 
@@ -613,7 +610,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3] bg-slate-900">
                 <img
                   src={IMAGES.aboutInterior}
-                  alt="Property Darshan Office & Luxury Living Room in Lucknow"
+                  alt="Shiv Property Uttarakhand Office & Architectural Living Space"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-2xl pointer-events-none"></div>
@@ -636,13 +633,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Right Column: Story Copy & Metrics */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#c58e3d] block mb-2 font-sans">
-                ABOUT PROPERTY DARSHAN
+                ABOUT SHIV PROPERTY UTTARAKHAND
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#071426] tracking-tight leading-tight mb-3 font-sans">
-                Your Trusted Real Estate Partner in Lucknow
+                Your Trusted Real Estate Partner in Rudrapur & Uttarakhand
               </h2>
               <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed mb-6">
-                At <strong className="font-bold text-slate-800">Property Darshan</strong>, we provide personalized guidance across Gomti Nagar, Sushant Golf City, Faizabad Road, and Shaheed Path — connecting buyers with genuine owners, verified titles, and zero middleman ambiguities.
+                At <strong className="font-bold text-slate-800">Shiv Property Uttarakhand</strong>, we provide personalized guidance across Rudrapur, Dineshpur Road, Pentagon Colony, and surrounding Udham Singh Nagar corridors — connecting buyers with genuine opportunities, clear site walkthroughs, and direct local coordination.
               </p>
 
               {/* 4 Quick Stat Badges */}
@@ -699,7 +696,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Comprehensive Real Estate Services
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2">
-              From your first shortlisted search to property site visits, legal checks, bank loans, and keys handover in Lucknow.
+              From your first shortlisted search to site visits, revenue checks, loan guidance, and possession in Uttarakhand.
             </p>
           </div>
 
@@ -710,7 +707,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               direction="rtl"
               speed={34}
               cardWidthClass="w-[290px] sm:w-[320px]"
-              ariaLabel="Property Darshan Core Real Estate Services"
+              ariaLabel="Shiv Property Uttarakhand Core Real Estate Services"
               items={[
                 // Service 1: Personalized Site Tours
                 <div
@@ -721,7 +718,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <div className="relative h-36 w-full overflow-hidden bg-slate-900">
                       <img
                         src={IMAGES.properties.villa1}
-                        alt="Personalised Site Tours in Lucknow"
+                        alt="Personalised Site Tours in Rudrapur"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
@@ -730,7 +727,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         <span>Accompanied Visits</span>
                       </div>
                       <span className="absolute bottom-2.5 left-2.5 text-white text-xs font-bold font-serif drop-shadow-xs">
-                        Gomti Nagar & Prime Corridors
+                        Rudrapur & Dineshpur Corridors
                       </span>
                     </div>
                     <div className="p-4">
@@ -738,7 +735,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         Personalised Site Tours
                       </h3>
                       <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
-                        Accompanied physical walkthroughs with senior Lucknow advisors reviewing dimensions, connectivity, and surroundings.
+                        Accompanied physical walkthroughs with local advisors reviewing dimensions, road connectivity, and surroundings.
                       </p>
                     </div>
                   </div>
@@ -753,7 +750,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
                 </div>,
 
-                // Service 2: Legal & RERA Guidance
+                // Service 2: Legal & Revenue Guidance
                 <div
                   key="srv-2"
                   className="bg-[#fcfbf9] border border-slate-200/90 hover:border-[#d4a359] rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between group h-[360px]"
@@ -762,24 +759,24 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <div className="relative h-36 w-full overflow-hidden bg-slate-900">
                       <img
                         src={IMAGES.properties.commercial1}
-                        alt="Legal and RERA Title Scrutiny in Lucknow"
+                        alt="Revenue and Title Scrutiny in Uttarakhand"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
                       <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 text-[#071426] text-[10px] font-bold shadow-xs">
                         <FileText className="w-3 h-3 text-[#d4a359]" />
-                        <span>Title & RERA Check</span>
+                        <span>Title & Revenue Check</span>
                       </div>
                       <span className="absolute bottom-2.5 left-2.5 text-white text-xs font-bold font-serif drop-shadow-xs">
-                        Zero Encumbrance Review
+                        Clear Title Verification
                       </span>
                     </div>
                     <div className="p-4">
                       <h3 className="text-base font-bold text-slate-900 group-hover:text-[#b87834] transition-colors mb-1">
-                        Legal & RERA Guidance
+                        Revenue & Title Scrutiny
                       </h3>
                       <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
-                        Title deed checks, registry verification, municipal approvals, and RERA compliance scrutiny before any token advance.
+                        Title deed checks, registry verification, municipal approvals, and statutory compliance guidance before any token advance.
                       </p>
                     </div>
                   </div>
@@ -803,7 +800,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <div className="relative h-36 w-full overflow-hidden bg-slate-900">
                       <img
                         src={IMAGES.properties.house1}
-                        alt="Home Loan Assistance with Top Banks in Lucknow"
+                        alt="Home Loan Assistance with Top Banks in Uttarakhand"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
@@ -812,7 +809,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         <span>Fast-Track Loan</span>
                       </div>
                       <span className="absolute bottom-2.5 left-2.5 text-white text-xs font-bold font-serif drop-shadow-xs">
-                        SBI • HDFC • ICICI Partners
+                        SBI • HDFC • PNB Partners
                       </span>
                     </div>
                     <div className="p-4">
@@ -826,7 +823,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
                   <div className="p-4 pt-0">
                     <button
-                      onClick={() => onNavigate('property-detail', 'luxury-villa-gomti-nagar')}
+                      onClick={() => onNavigate('property-detail', 'residential-plot-dineshpur-road')}
                       className="w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-[#d4a359] text-slate-800 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs"
                     >
                       <span>Calculate EMI</span>
@@ -843,8 +840,8 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div>
                     <div className="relative h-36 w-full overflow-hidden bg-slate-900">
                       <img
-                        src={IMAGES.skylineLucknow}
-                        alt="High Return Investment Opportunities in Lucknow"
+                        src={IMAGES.skylineCorridor}
+                        alt="High Return Investment Opportunities in Uttarakhand"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
@@ -853,7 +850,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         <span>High Growth Corridors</span>
                       </div>
                       <span className="absolute bottom-2.5 left-2.5 text-white text-xs font-bold font-serif drop-shadow-xs">
-                        Shaheed Path & Sultanpur Rd
+                        Kichha Road & Highway Corridors
                       </span>
                     </div>
                     <div className="p-4">
@@ -861,7 +858,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                         Investment Advisory
                       </h3>
                       <p className="text-xs text-slate-500 leading-relaxed line-clamp-3">
-                        Strategic growth forecasting and high capital appreciation opportunities across emerging Lucknow infrastructure corridors.
+                        Strategic growth forecasting and capital appreciation opportunities across emerging Rudrapur and highway infrastructure corridors.
                       </p>
                     </div>
                   </div>
@@ -896,7 +893,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 Property Tours & Instagram Reels
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl font-normal">
-                Watch high-definition video walkthroughs and short video reels showing every angle of Lucknow&apos;s finest properties before scheduling your visit.
+                Watch video walkthroughs and short reels showing every angle of prime properties in Rudrapur and Uttarakhand before scheduling your visit.
               </p>
             </div>
 
@@ -918,7 +915,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               direction="ltr"
               speed={32}
               cardWidthClass="w-[280px] sm:w-[310px]"
-              ariaLabel="Lucknow Property Video Walkthroughs and Reels"
+              ariaLabel="Rudrapur Property Video Walkthroughs and Reels"
               items={propertyTours.map((tour) => (
                 <div
                   key={tour.id}
@@ -990,10 +987,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white leading-tight">
-                  Follow Property Darshan on Instagram
+                  Follow @shiv_property_uttarakhand on Instagram
                 </h3>
                 <p className="text-xs text-slate-300 mt-0.5">
-                  New video walkthroughs, price drops, and Lucknow property updates posted weekly.
+                  New video walkthroughs, plot tours, and Rudrapur property updates posted regularly.
                 </p>
               </div>
             </div>
@@ -1018,7 +1015,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================= 8. WHY CHOOSE PROPERTY DARSHAN (PHASE 1 PRESERVED) ================= */}
+      {/* ================= 8. WHY CHOOSE SHIV PROPERTY UTTARAKHAND ================= */}
       <section className="w-full bg-[#071426] overflow-hidden" id="why-choose" data-purpose="story-and-value">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Side: Cozy Luxury Living Room Image with Handwritten Title */}
@@ -1038,7 +1035,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Right Side: Why Choose Property Darshan Content Block */}
+          {/* Right Side: Why Choose Content Block */}
           <div className="bg-[#071426] text-white p-8 sm:p-12 lg:p-16 flex flex-col justify-center relative">
             {/* Subtle Gold Skyscraper Vector Background Pattern */}
             <div className="absolute right-4 bottom-4 opacity-15 pointer-events-none hidden sm:block">
@@ -1058,7 +1055,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="relative z-10 max-w-xl">
               {/* Overline */}
               <span className="text-xs font-bold uppercase tracking-[0.22em] text-[#e5b268] block mb-3 font-sans">
-                WHY CHOOSE PROPERTY DARSHAN
+                WHY CHOOSE SHIV PROPERTY UTTARAKHAND
               </span>
 
               {/* Main Header */}
@@ -1070,7 +1067,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Descriptive Copy */}
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-10 font-normal">
                 From property tours to investment insights, we make your real estate journey in{' '}
-                <strong className="text-white font-semibold">Lucknow</strong> simple, transparent and rewarding.
+                <strong className="text-white font-semibold">Rudrapur & Uttarakhand</strong> simple, transparent and rewarding.
               </p>
 
               {/* 3 Micro Features Grid */}
@@ -1081,7 +1078,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     <MapPin className="w-6 h-6 stroke-[1.8]" />
                   </div>
                   <span className="text-sm font-semibold text-slate-100 leading-snug">
-                    Prime Locations Across Lucknow
+                    Prime Locations Across Rudrapur & Udham Singh Nagar
                   </span>
                 </div>
 

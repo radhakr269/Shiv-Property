@@ -47,29 +47,29 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 group text-left focus:outline-none"
             data-purpose="brand-logo"
-            aria-label="Property Darshan Home"
+            aria-label="Shiv Property Uttarakhand Home"
           >
             <div className="flex items-end gap-0.5 text-[#d4a359]">
-              {/* Geometric Skyscraper Emblem */}
+              {/* Geometric Architectural & Mountain Peak Emblem */}
               <svg
                 className="w-8 h-9 fill-current"
                 fill="none"
                 viewBox="0 0 32 36"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect fill="#D4A359" height="20" opacity="0.8" rx="1" width="6" x="2" y="16"></rect>
-                <rect fill="#E5B268" height="28" rx="1" width="6" x="10" y="8"></rect>
-                <rect fill="#F4CA88" height="34" rx="1" width="6" x="18" y="2"></rect>
-                <rect fill="#C58E3D" height="24" opacity="0.9" rx="1" width="5" x="26" y="12"></rect>
-                <path d="M0 35H32V36H0z" fill="#D4A359"></path>
+                <path d="M16 2L2 14V34H12V24H20V34H30V14L16 2Z" fill="#F4CA88" opacity="0.95" />
+                <path d="M16 5L5 14.5V32H10V22H22V32H27V14.5L16 5Z" fill="#E5B268" />
+                <path d="M16 9L9 15.5V30H13V22H19V30H23V15.5L16 9Z" fill="#D4A359" />
+                <path d="M16 13L13 16V22H19V16L16 13Z" fill="#C58E3D" opacity="0.95" />
+                <path d="M0 35H32V36H0z" fill="#D4A359" />
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-[13px] tracking-[0.25em] font-semibold text-[#e5b268] font-sans uppercase leading-none">
-                PROPERTY
+              <span className="text-[12px] sm:text-[13px] tracking-[0.22em] font-bold text-[#e5b268] font-sans uppercase leading-none">
+                SHIV PROPERTY
               </span>
-              <span className="text-2xl font-bold tracking-tight text-white leading-tight font-serif mt-0.5">
-                दर्शन
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-tight font-serif mt-0.5">
+                UTTARAKHAND
               </span>
             </div>
           </button>
@@ -169,11 +169,11 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="text-xs text-slate-400 space-y-1 pt-2">
                 <p className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-[#e5b268]" />
-                  <span>+91 9721013815 / 8809269208</span>
+                  <span>{CONTACT_CONFIG.displayPhones}</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-[#e5b268]" />
-                  <span>Lucknow, Uttar Pradesh</span>
+                  <span>{CONTACT_CONFIG.city}, {CONTACT_CONFIG.state}</span>
                 </p>
               </div>
             </div>
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             <p className="text-xs text-slate-600 mb-4 leading-relaxed">
-              Live OTP login and document management are currently enabled for registered clients in private beta. For instant property tours, verified title reviews, or custom proposals in Lucknow, connect directly with our advisory desk:
+              Live OTP login and document management are currently enabled for registered clients in private beta. For instant property tours, verified site inspections, or custom proposals in Rudrapur and surrounding Uttarakhand regions, connect directly with our advisory desk:
             </p>
 
             <div className="space-y-2.5">

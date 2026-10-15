@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Architectural Mountain Peak & Villa Emblem -->
+  <g transform="translate(10, 14)">
+    <path d="M24 0L4 16V46H18V32H30V46H44V16L24 0Z" fill="#F4CA88" opacity="0.95" />
+    <path d="M24 6L10 18V44H16V30H32V44H38V18L24 6Z" fill="#E5B268" />
+    <path d="M24 12L15 20V42H20V29H28V42H33V20L24 12Z" fill="#D4A359" />
+    <path d="M24 18L19 23V28H29V23L24 18Z" fill="#C58E3D" />
+    <path d="M0 48H48V50H0z" fill="#D4A359" />
+  </g>
+  <!-- Brand Text -->
+  <text x="75" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13" letter-spacing="3.5" fill="#E5B268">SHIV PROPERTY</text>
+  <text x="75" y="65" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="22" letter-spacing="1.5" fill="#FFFFFF">UTTARAKHAND</text>
+</svg>

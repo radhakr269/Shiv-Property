@@ -24,8 +24,8 @@ export const ScheduleVisitModal: React.FC<ScheduleVisitModalProps> = ({ property
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
 
-    const message = `Hello Property Darshan,\n\nI would like to schedule a site visit:\n• Property: ${property.title} (${property.location})\n• Preferred Date: ${date || 'Earliest available'}\n• Preferred Time: ${slot}\n• Visitor Name: ${name.trim()}\n• Contact Phone: ${phone.trim()}\n\nPlease confirm availability and guide our site inspection.`;
-    const url = `https://wa.me/919721013815?text=${encodeURIComponent(message)}`;
+    const message = `Hello ${CONTACT_CONFIG.businessName},\n\nI would like to schedule a site visit:\n• Property: ${property.title} (${property.location})\n• Preferred Date: ${date || 'Earliest available'}\n• Preferred Time: ${slot}\n• Visitor Name: ${name.trim()}\n• Contact Phone: ${phone.trim()}\n\nPlease confirm availability and guide our site inspection in Uttarakhand.`;
+    const url = `https://wa.me/${CONTACT_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     
     setWaLink(url);
     setIsSubmitted(true);
@@ -51,7 +51,7 @@ export const ScheduleVisitModal: React.FC<ScheduleVisitModalProps> = ({ property
             <p className="text-xs sm:text-sm text-slate-600 max-w-xs mx-auto leading-relaxed">
               Thank you, <span className="font-semibold text-slate-900">{name}</span>. Your site tour request for{' '}
               <span className="font-semibold text-[#071426]">{property.title}</span> on{' '}
-              <span className="font-semibold">{date || 'selected date'} ({slot})</span> is ready for direct dispatch to our Lucknow advisor.
+              <span className="font-semibold">{date || 'selected date'} ({slot})</span> is ready for direct dispatch to our Rudrapur advisor.
             </p>
 
             <div className="pt-2 space-y-2.5">
@@ -62,7 +62,7 @@ export const ScheduleVisitModal: React.FC<ScheduleVisitModalProps> = ({ property
                 className="w-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold py-3 px-5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-xs"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-current" />
-                <span>Confirm on WhatsApp (+91 9721013815)</span>
+                <span>Confirm on WhatsApp ({CONTACT_CONFIG.displayWhatsApp})</span>
               </a>
 
               <a
@@ -70,7 +70,7 @@ export const ScheduleVisitModal: React.FC<ScheduleVisitModalProps> = ({ property
                 className="w-full bg-[#071426] hover:bg-[#0c1e34] text-white font-bold py-2.5 px-5 rounded-xl transition-all flex items-center justify-center gap-2 text-xs"
               >
                 <Phone className="w-3.5 h-3.5 text-[#d4a359]" />
-                <span>Call Advisor: {CONTACT_CONFIG.primaryPhone}</span>
+                <span>Call Advisor: {CONTACT_CONFIG.displayPhones}</span>
               </a>
 
               <button
